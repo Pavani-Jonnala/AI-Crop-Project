@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Climate-Resilient Crop AI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <header class="header">
+
+        <h1>🌾 Climate-Resilient Crop AI</h1>
+
+        <p>
+            AI-powered decision support for climate-smart agriculture
+        </p>
+
+    </header>
+
+
+    <main class="container">
+
+        <section class="hero">
+
+            <h2>📍 Analyze Your Agricultural Area</h2>
+
+            <p class="hero-text">
+                Enter your location to understand the climate,
+                soil and flood conditions of your area and get
+                a suitable crop recommendation.
+            </p>
+
+
+           <form action="/analyze" method="POST">
+
+    <div class="location-grid">
+
+        <div class="input-group">
+            <label for="state">State</label>
+
+            <input
+                type="text"
+                id="state"
+                name="state"
+                placeholder="Enter your state"
+                required>
+        </div>
+
+
+        <div class="input-group">
+            <label for="district">District</label>
+
+            <input
+                type="text"
+                id="district"
+                name="district"
+                placeholder="Enter your district"
+                required>
+        </div>
+
+
+        <div class="input-group">
+            <label for="area">Area / Mandal</label>
+
+            <input
+                type="text"
+                id="area"
+                name="area"
+                placeholder="Enter your area"
+                required>
+        </div>
+
+    </div>
+
+
+    <button
+        type="submit"
+        class="analyze-btn">
+
+        Analyze My Area →
+
+    </button>
+
+</form>
+           
+
+        </section>
+
+
+        <section class="info-section">
+
+            <div class="info-card">
+
+                <h3>🌦️ Climate Analysis</h3>
+
+                <p>
+                    Temperature, rainfall and humidity
+                </p>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <h3>🌱 Soil Analysis</h3>
+
+                <p>
+                    Soil nutrients and soil conditions
+                </p>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <h3>🌊 Flood Risk</h3>
+
+                <p>
+                    Flood severity and climate risk
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>

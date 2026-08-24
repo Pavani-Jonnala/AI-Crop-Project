@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Crop Analysis Result</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <header class="header">
+
+        <h1>🌾 Climate-Resilient Crop AI</h1>
+
+        <p>
+            AI-powered decision support for climate-smart agriculture
+        </p>
+
+    </header>
+
+
+    <main class="container">
+
+        <!-- Location -->
+
+        <section class="result-card">
+
+            <h2>📍 Location Analysis</h2>
+
+            <div class="location-details">
+
+                <p>
+                    <strong>State:</strong>
+                    {{ state }}
+                </p>
+
+                <p>
+                    <strong>District:</strong>
+                    {{ district }}
+                </p>
+
+                <p>
+                    <strong>Area / Mandal:</strong>
+                    {{ area }}
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Climate -->
+
+        <section class="result-card">
+
+            <h2>🌦️ Climate Analysis</h2>
+
+            <div class="result-grid">
+
+                <div>
+                    <h3>Temperature</h3>
+                    <p>{{ analysis.temperature }}</p>
+                </div>
+
+                <div>
+                    <h3>Humidity</h3>
+                    <p>{{ analysis.humidity }}</p>
+                </div>
+
+                <div>
+                    <h3>Rainfall</h3>
+                    <p>{{ analysis.rainfall }}</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Soil -->
+
+        <section class="result-card">
+
+            <h2>🌱 Soil Analysis</h2>
+
+            <div class="result-grid">
+
+                <div>
+                    <h3>Nitrogen</h3>
+                    <p>{{ analysis.nitrogen }}</p>
+                </div>
+
+                <div>
+                    <h3>Phosphorus</h3>
+                    <p>{{ analysis.phosphorus }}</p>
+                </div>
+
+                <div>
+                    <h3>Potassium</h3>
+                    <p>{{ analysis.potassium }}</p>
+                </div>
+
+                <div>
+                    <h3>pH</h3>
+                    <p>{{ analysis.ph }}</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Flood -->
+
+        <section class="result-card">
+
+            <h2>🌊 Flood Risk</h2>
+
+            <div class="risk-box">
+
+                <h3>
+                    Risk Level
+                </h3>
+
+                <p>
+                    {{ analysis.flood_risk }}
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Crop -->
+
+        <section class="recommendation-card">
+
+            <h2>🤖 AI Crop Recommendation</h2>
+
+            <h1>
+                🌾 {{ analysis.crop }}
+            </h1>
+
+            <p>
+                This crop is recommended based on the
+                available agricultural conditions.
+            </p>
+
+        </section>
+
+
+        <!-- Fertilizer -->
+
+        <section class="result-card">
+
+            <h2>🧪 Fertilizer Recommendation</h2>
+
+            <p>
+                {{ analysis.fertilizer }}
+            </p>
+
+        </section>
+
+
+        <!-- Solution -->
+
+        <section class="solution-card">
+
+            <h2>💡 Recommended Climate-Resilient Solution</h2>
+
+            <p>
+                {{ analysis.solution }}
+            </p>
+
+        </section>
+
+
+        <div class="back-button">
+
+            <a href="/">
+                ← Analyze Another Area
+            </a>
+
+        </div>
+
+    </main>
+
+</body>
+
+</html>
